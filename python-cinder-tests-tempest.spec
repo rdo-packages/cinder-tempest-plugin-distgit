@@ -1,11 +1,21 @@
+%{!?upstream_version: %global upstream_version %{commit}}
+%global commit 46b433ff4f37aa18e714cf8f7a55a22c470b6325
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+# DO NOT REMOVE ALPHATAG
+%global alphatag .%{shortcommit}git
+
 %global service cinder
 %global plugin cinder-tempest-plugin
 %global module cinder_tempest_plugin
 
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-
 %if 0%{?fedora}
 %global with_python3 1
+%endif
+
+%if 0%{?dlrn}
+%define tarsources %module
+%else
+%define tarsources %plugin
 %endif
 
 %global common_desc \
@@ -14,13 +24,13 @@ Additionally it provides a plugin to automatically load these tests \
 into Tempest.
 
 Name:       python-%{service}-tests-tempest
-Version:    XXX
-Release:    XXX
+Version:    0.0.1
+Release:    0.1%{?alphatag}%{?dist}
 Summary:    Tempest Integration of Cinder Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
+Source0:    http://github.com/openstack/%{plugin}/archive/%{commit}.tar.gz#/%{plugin}-%{shortcommit}.tar.gz
 
 BuildArch:  noarch
 
@@ -65,7 +75,7 @@ Requires:   python3-oslo-serialization >= 2.18.0
 %endif
 
 %prep
-%autosetup -n %{module}-%{upstream_version} -S git
+%autosetup -n %{tarsources}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
@@ -99,3 +109,5 @@ rm -rf %{module}.egg-info
 %endif
 
 %changelog
+* Mon Feb 19 2018 Chandan Kumar <chkumar@redhat.com> 0.0.1-0.1.46b433ffgit
+- Update to pre-release 0.0.1 (46b433ff4f37aa18e714cf8f7a55a22c470b6325)
