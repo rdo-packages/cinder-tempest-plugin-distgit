@@ -37,7 +37,7 @@ BuildRequires:  python2-devel
 BuildRequires:  python2-pbr
 BuildRequires:  python2-setuptools
 
-Obsoletes:   python-cinder-tests < 12.0.0
+Obsoletes:   python-cinder-tests < 1:12.0.0
 
 Requires:   python2-pbr >= 2.0.0
 Requires:   python2-six >= 1.10.0
