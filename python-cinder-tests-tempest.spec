@@ -27,7 +27,7 @@ Summary:    Tempest Integration of Cinder Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    http://tarballs.openstack.org/%{plugin}/%{module}-%{upstream_version}.tar.gz
+Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 
@@ -56,7 +56,7 @@ Requires:   python%{pyver}-oslo-serialization >= 2.18.0
 %{common_desc}
 
 %prep
-%autosetup -n %{module}-%{upstream_version} -S git
+%autosetup -n %{plugin}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
