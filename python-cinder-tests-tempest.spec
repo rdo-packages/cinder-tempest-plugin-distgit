@@ -13,6 +13,9 @@
 %global plugin cinder-tempest-plugin
 %global module cinder_tempest_plugin
 
+%{?dlrn: %global tarsources %plugin}
+%{!?dlrn: %global tarsources %module}
+
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global common_desc \
@@ -27,7 +30,7 @@ Summary:    Tempest Integration of Cinder Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    http://tarballs.openstack.org/%{plugin}/%{module}-%{upstream_version}.tar.gz
+Source0:    http://tarballs.openstack.org/%{plugin}/%{tarsources}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 
@@ -56,7 +59,7 @@ Requires:   python%{pyver}-oslo-serialization >= 2.18.0
 %{common_desc}
 
 %prep
-%autosetup -n %{module}-%{upstream_version} -S git
+%autosetup -n %{tarsources}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
