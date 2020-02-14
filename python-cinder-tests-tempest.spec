@@ -13,9 +13,6 @@
 %global plugin cinder-tempest-plugin
 %global module cinder_tempest_plugin
 
-%{?dlrn: %global tarsources %plugin}
-%{!?dlrn: %global tarsources %module}
-
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global common_desc \
@@ -24,13 +21,13 @@ Additionally it provides a plugin to automatically load these tests \
 into Tempest.
 
 Name:       python-%{service}-tests-tempest
-Version:    0.2.0
+Version:    0.3.1
 Release:    1%{?dist}
 Summary:    Tempest Integration of Cinder Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    http://tarballs.openstack.org/%{plugin}/%{tarsources}-%{upstream_version}.tar.gz
+Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
 
 BuildArch:  noarch
 
@@ -59,7 +56,7 @@ Requires:   python%{pyver}-oslo-serialization >= 2.18.0
 %{common_desc}
 
 %prep
-%autosetup -n %{tarsources}-%{upstream_version} -S git
+%autosetup -n %{plugin}-%{upstream_version} -S git
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
@@ -79,6 +76,10 @@ rm -rf %{module}.egg-info
 %{pyver_sitelib}/*.egg-info
 
 %changelog
+* Fri Feb 14 2020 RDO <dev@lists.rdoproject.org> 0.3.1-1
+- Update to 0.3.1
+- Change name of generated tarball
+
 * Thu Apr 04 2019 RDO <dev@lists.rdoproject.org> 0.2.0-1
 - Update to 0.2.0
 
