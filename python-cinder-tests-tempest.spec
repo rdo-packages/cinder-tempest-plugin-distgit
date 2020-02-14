@@ -82,3 +82,4 @@ rm -rf %{module}.egg-info
 * Thu Apr 04 2019 RDO <dev@lists.rdoproject.org> 0.2.0-1
 - Update to 0.2.0
 
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/cinder-tempest-plugin/commit/?id=3cd73f60d8726170c7567338d9812f0e399ab7e7
