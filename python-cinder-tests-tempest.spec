@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x5d2d1e4fb8d38e6af76c50d53d4fec30cf5ce3da
 %global service cinder
 %global plugin cinder-tempest-plugin
 %global module cinder_tempest_plugin
@@ -12,8 +12,8 @@ Additionally it provides a plugin to automatically load these tests \
 into Tempest.
 
 Name:       python-%{service}-tests-tempest
-Version:    1.2.0
-Release:    2%{?dist}
+Version:    1.4.0
+Release:    1%{?dist}
 Summary:    Tempest Integration of Cinder Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -81,6 +81,9 @@ rm -rf %{module}.egg-info
 %{python3_sitelib}/*.egg-info
 
 %changelog
+* Tue Mar 23 2021 RDO <dev@lists.rdoproject.org> 1.4.0-1
+- Update to 1.4.0
+
 * Wed Oct 21 2020 Joel Capitao <jcapitao@redhat.com> 1.2.0-2
 - Enable sources tarball validation using GPG signature.
 
