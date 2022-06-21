@@ -81,3 +81,4 @@ rm -rf %{module}.egg-info
 %{python3_sitelib}/*.egg-info
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/cinder-tempest-plugin/commit/141dace60e5e4d14bf39b65872a4c9db63ba8df4
