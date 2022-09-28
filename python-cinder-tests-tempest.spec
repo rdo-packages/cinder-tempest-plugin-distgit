@@ -81,3 +81,4 @@ rm -rf %{module}.egg-info
 %{python3_sitelib}/*.egg-info
 
 %changelog
+
