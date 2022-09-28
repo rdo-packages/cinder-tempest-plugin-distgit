@@ -1,10 +1,20 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+#TODO(jcapitao): remove the line below once we build proper tag
+%global sources_gpg 0
+%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
 %global service cinder
 %global plugin cinder-tempest-plugin
 %global module cinder_tempest_plugin
 
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{!?upstream_version: %global upstream_version %{commit}}
+%global commit 7ee02e8ed3971ce4ff8f3a047f62d68b7f851d76
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+# DO NOT REMOVE ALPHATAG
+%global alphatag .%{shortcommit}git
+
+%{?dlrn: %global tarsources %{plugin}-%{upstream_version}}
+%{!?dlrn: %global tarsources %{plugin}}
+
 
 %global common_desc \
 This package contains Tempest tests to cover the cinder project. \
@@ -12,13 +22,13 @@ Additionally it provides a plugin to automatically load these tests \
 into Tempest.
 
 Name:       python-%{service}-tests-tempest
-Version:    XXX
-Release:    XXX
+Version:    1.7.0
+Release:    2%{?alphatag}%{?dist}
 Summary:    Tempest Integration of Cinder Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
+Source0:    http://opendev.org/openstack/%{plugin}/archive/%{upstream_version}.tar.gz#/%{module}-%{shortcommit}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
 Source101:        http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz.asc
@@ -61,7 +71,7 @@ Requires:   python3-oslo-serialization >= 2.18.0
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%autosetup -n %{plugin}-%{upstream_version} -S git
+%autosetup -n %{tarsources} -S git
 
 # Let's handle dependencies ourseleves
 %py_req_cleanup
@@ -81,3 +91,6 @@ rm -rf %{module}.egg-info
 %{python3_sitelib}/*.egg-info
 
 %changelog
+* Wed Sep 28 2022 RDO <dev@lists.rdoproject.org> 1.7.0-2.7ee02e8egit
+- Update to post 1.7.0 (7ee02e8ed3971ce4ff8f3a047f62d68b7f851d76)
+
