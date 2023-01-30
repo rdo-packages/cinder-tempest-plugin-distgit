@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0xa63ea142678138d1bb15f2e303bdfd64dd164087
+%global sources_gpg_sign 0xa7475c5f2122fec3f90343223fe3bf5aad1080e4
 %global service cinder
 %global plugin cinder-tempest-plugin
 %global module cinder_tempest_plugin
@@ -12,7 +12,7 @@ Additionally it provides a plugin to automatically load these tests \
 into Tempest.
 
 Name:       python-%{service}-tests-tempest
-Version:    1.7.2
+Version:    1.8.0
 Release:    1%{?dist}
 Summary:    Tempest Integration of Cinder Project
 License:    ASL 2.0
@@ -81,6 +81,9 @@ rm -rf %{module}.egg-info
 %{python3_sitelib}/*.egg-info
 
 %changelog
+* Mon Jan 30 2023 RDO <dev@lists.rdoproject.org> 1.8.0-1
+- Update to 1.8.0
+
 * Fri Sep 30 2022 RDO <dev@lists.rdoproject.org> 1.7.2-1
 - Update to 1.7.2
 
