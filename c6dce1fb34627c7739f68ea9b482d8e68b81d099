@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "c6dce1fb34627c7739f68ea9b482d8e68b81d099",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c550c78_928e95a6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 141
+      },
+      "writtenOn": "2023-03-02T15:39:45Z",
+      "side": 1,
+      "message": "I was trying to understand what went wrong but I don\u0027t see a clear error, apart from a \n\nTagError: build python-cinder-tests-tempest-1.8.0-1.el8 already tagged (cloud8s-openstack-xena-candidate)\n\n",
+      "revId": "c6dce1fb34627c7739f68ea9b482d8e68b81d099",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
