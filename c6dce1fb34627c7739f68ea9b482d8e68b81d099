@@ -103,6 +103,24 @@
       "parentUuid": "c395b63e_5b297690",
       "revId": "c6dce1fb34627c7739f68ea9b482d8e68b81d099",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d853adb1_8161ed3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-03-03T13:32:49Z",
+      "side": 1,
+      "message": "we are hitting a weird corner case because the original build https://cbs.centos.org/koji/taskinfo?taskID\u003d3197683 was reported as failed although the built was fine (probably cbs started two tag actions in parallel by mistake) and you can see that the tags are fine.\n\nThe ci job checks the status of the task which built the package and get it as failed so the job fails. TBH, i\u0027m not sure how to fix, because that check makes snese actually, so i will force the merge of this review.",
+      "parentUuid": "8fcbe8f6_033a13d6",
+      "revId": "c6dce1fb34627c7739f68ea9b482d8e68b81d099",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
