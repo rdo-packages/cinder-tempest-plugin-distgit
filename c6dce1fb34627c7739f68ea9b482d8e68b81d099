@@ -121,6 +121,24 @@
       "parentUuid": "8fcbe8f6_033a13d6",
       "revId": "c6dce1fb34627c7739f68ea9b482d8e68b81d099",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "745218ea_4e806b75",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 141
+      },
+      "writtenOn": "2023-03-03T13:53:27Z",
+      "side": 1,
+      "message": "Weird, I remember other cases of tagging the same package version on different openstack releases and it usually worked.\n\nDoes this mean that also https://review.rdoproject.org/r/c/openstack/cinder-tempest-plugin-distgit/+/46776 (xena) and https://review.rdoproject.org/r/c/openstack/cinder-tempest-plugin-distgit/+/46775 (wallaby) require manual intervention?",
+      "parentUuid": "d853adb1_8161ed3e",
+      "revId": "c6dce1fb34627c7739f68ea9b482d8e68b81d099",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
