@@ -139,6 +139,24 @@
       "parentUuid": "d853adb1_8161ed3e",
       "revId": "c6dce1fb34627c7739f68ea9b482d8e68b81d099",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2aeaf68_103e130b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-03-03T15:03:18Z",
+      "side": 1,
+      "message": "Yes, we do similar operations all the time. This case is because of a really unusual situation. We\u0027ll have to manually merge those too.",
+      "parentUuid": "745218ea_4e806b75",
+      "revId": "c6dce1fb34627c7739f68ea9b482d8e68b81d099",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
