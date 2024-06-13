@@ -1,0 +1,8 @@
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Code-Review+2: Luigi Toscano <ltoscano@redhat.com>
+Workflow+1: Luigi Toscano <ltoscano@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Thu, 13 Jun 2024 13:22:16 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/cinder-tempest-plugin-distgit/+/53459
+Project: openstack/cinder-tempest-plugin-distgit
+Branch: refs/heads/antelope-rdo
