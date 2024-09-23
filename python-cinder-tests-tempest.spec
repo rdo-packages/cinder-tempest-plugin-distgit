@@ -12,7 +12,7 @@ Additionally it provides a plugin to automatically load these tests \
 into Tempest.
 
 Name:       python-%{service}-tests-tempest
-Version:    1.14.0
+Version:    1.15.0
 Release:    1%{?dist}
 Summary:    Tempest Integration of Cinder Project
 License:    ASL 2.0
@@ -81,6 +81,9 @@ rm -rf %{module}.egg-info
 %{python3_sitelib}/*.egg-info
 
 %changelog
+* Mon Sep 23 2024 RDO <dev@lists.rdoproject.org> 1.15.0-1
+- Update to 1.15.0
+
 * Thu Jun 13 2024 RDO <dev@lists.rdoproject.org> 1.14.0-1
 - Update to 1.14.0
 
