@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0xf8675126e2411e7748dd46662fc2093e4682645f
 %global service cinder
 %global plugin cinder-tempest-plugin
 %global module cinder_tempest_plugin
@@ -12,8 +12,8 @@ Additionally it provides a plugin to automatically load these tests \
 into Tempest.
 
 Name:       python-%{service}-tests-tempest
-Version:    XXX
-Release:    XXX
+Version:    1.14.0
+Release:    4%{?dist}
 Summary:    Tempest Integration of Cinder Project
 License:    Apache-2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -69,4 +69,16 @@ BuildRequires:  pyproject-rpm-macros
 %{python3_sitelib}/*.dist-info
 
 %changelog
+* Thu Sep 26 2024 RDO <dev@lists.rdoproject.org> 1.15.0-4
+- Rebuild in Dalmatian
+
+* Mon Sep 23 2024 RDO <dev@lists.rdoproject.org> 1.15.0-3
+- Rebuild in Caracal
+
+* Mon Sep 23 2024 RDO <dev@lists.rdoproject.org> 1.15.0-2
+- Rebuild in Bobcat
+
+* Mon Sep 23 2024 RDO <dev@lists.rdoproject.org> 1.15.0-1
+- Update to 1.15.0
+
 
