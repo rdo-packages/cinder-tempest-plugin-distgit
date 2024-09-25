@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a541a01a_551b89a7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2024-09-25T16:49:54Z",
+      "side": 1,
+      "message": "need cherry-pick of https://review.rdoproject.org/r/c/openstack/cinder-tempest-plugin-distgit/+/54640",
+      "revId": "2a33dd6bee78de69fc35cf4b36f0247005651663",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
