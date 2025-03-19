@@ -5,6 +5,8 @@
 %global module cinder_tempest_plugin
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{?dlrn: %global tarsources %{plugin}}
+%{!?dlrn: %global tarsources %{module}}
 
 %global common_desc \
 This package contains Tempest tests to cover the cinder project. \
@@ -18,10 +20,10 @@ Summary:    Tempest Integration of Cinder Project
 License:    Apache-2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
-Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
+Source0:    http://tarballs.openstack.org/%{plugin}/%{tarsources}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz.asc
+Source101:        http://tarballs.openstack.org/%{plugin}/%{tarsources}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 
@@ -51,7 +53,7 @@ BuildRequires:  pyproject-rpm-macros
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%autosetup -n %{plugin}-%{upstream_version} -S git
+%autosetup -n %{tarsources}-%{upstream_version} -S git
 
 %generate_buildrequires
 %pyproject_buildrequires -R
