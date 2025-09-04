@@ -72,3 +72,4 @@ BuildRequires:  pyproject-rpm-macros
 
 %changelog
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/cinder-tempest-plugin/commit/1357d5dccffc2cd6c1e8a13e84c065d5bd55e4d5
